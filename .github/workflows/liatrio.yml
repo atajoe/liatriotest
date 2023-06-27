@@ -52,7 +52,7 @@ jobs:
         id: generate
         run: |
           # Generate the desired string
-          echo "{my_string}="Hello, World!" >> $GITHUB_OUTPUT
+          echo "{my_string}"="Hello, World!" >> $GITHUB_OUTPUT
 
   use-string:
     needs: generate-string
