@@ -43,3 +43,24 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
+          
+  generate-string:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Generate String
+        id: generate
+        run: |
+          # Generate the desired string
+          echo "::set-output name=my_string::Hello, World!"
+
+  use-string:
+    needs: generate-string
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Use String Output
+        run: |
+          # Access the string output from the previous job
+          echo "The generated string is: ${{ needs.generate-string.outputs.my_string }}"
+        
