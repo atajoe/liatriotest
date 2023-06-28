@@ -22,9 +22,7 @@ jobs:
   # This workflow contains a single job called "build"
   build:
     # The type of runner that the job will run on
-    runs-on: 
-        - self-hosted
-        - label1,lavel2
+    runs-on: self-hosted
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
@@ -47,7 +45,7 @@ jobs:
           echo test, and deploy your project.
           
   generate-string:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
 
     steps:
       - name: Generate String
@@ -58,7 +56,7 @@ jobs:
 
   use-string:
     needs: generate-string
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
 
     steps:
       - name: Use String Output
